@@ -7,8 +7,24 @@ body {
     font-family: 'FC Muffin';
     font-size: 2em;
     user-select: none;
-    overflow: hidden;
 }
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
 
 .maji-sneaky {
     position: fixed;
@@ -107,7 +123,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    .note-pen, .maji-sneaky {
+
+    .note-pen,
+    .maji-sneaky {
         display: none;
     }
 

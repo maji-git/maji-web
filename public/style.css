@@ -1,7 +1,13 @@
+@import url(assets/fonts/stylesheet.css);
+
 body {
     background-image: url(/assets/line.png);
     background-repeat: repeat;
     background-size: 40px;
+    font-family: 'FC Muffin';
+    font-size: 2em;
+    user-select: none;
+    overflow: hidden;
 }
 
 .maji-sneaky {
@@ -16,4 +22,143 @@ body {
     width: 4px;
     position: fixed;
     left: 100px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.social-link {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: #171F1C;
+    text-decoration: none;
+
+    box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.25) inset, 0px 0px 29.4px 0px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s, background-color 0.25s;
+    position: relative;
+}
+
+.social-link:hover {
+    transition-duration: 0.25s, 0s;
+    transform: scale(1.02) translateY(-1px);
+    background-color: #CFE1D3;
+}
+
+.social-link:active {
+    transition-duration: 0.05s;
+    transform: scale(0.98) translateY(1px);
+}
+
+::-moz-selection {
+    background: #B0D4B8;
+}
+
+::selection {
+    background: #B0D4B8;
+}
+
+.note-dot {
+    position: relative;
+    bottom: 5px;
+}
+
+.note {
+    background-image: url(/assets/line-note.png);
+    background-repeat: repeat;
+    background-size: 40px;
+    position: relative;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.note-text {
+    z-index: 2;
+    position: relative;
+}
+
+.note-marker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.note-pen {
+    position: absolute;
+    right: 0;
+    bottom: -1rem;
+    transition: transform 0.16s;
+    transform-origin: bottom;
+    z-index: 3;
+}
+
+.note-pen:hover {
+    transform: scale(1.1);
+}
+
+.note-pen:active {
+    transform: scale(0.8);
+}
+
+@media (max-width: 768px) {
+    .note-pen, .maji-sneaky {
+        display: none;
+    }
+
+    .note-marker {
+        opacity: 0.2;
+    }
+
+    .corner-doddle {
+        display: none;
+    }
+}
+
+.social-icon {
+    border-radius: 7px;
+}
+
+.social-title {
+    margin: 0;
+    margin-left: 1rem;
+}
+
+.corner-doddle {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+#drawCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#penCursor {
+    pointer-events: none;
+    position: absolute;
+    transform-origin: top;
+    z-index: 10;
+    transition: transform 0.5s;
+}
+
+.maji-sneaky img {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.36, 0, 0.66, -0.56);
+    transition-delay: 1s;
+}
+
+.maji-sneaky:hover img {
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scaleX(1);
 }

@@ -16,3 +16,23 @@
     font-display: swap;
 }
 
+
+@font-face {
+    font-family: '2005_iannnnnAMD';
+    src: url('2005_iannnnnAMD.woff2') format('woff2'),
+        url('2005_iannnnnAMD.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '2005_iannnnnSMS';
+    src: url('2005_iannnnnSMS.woff2') format('woff2'),
+        url('2005_iannnnnSMS.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+

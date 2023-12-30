@@ -1,0 +1,6 @@
+[submodule "public/swift-countdown"]
+	path = public/swift-countdown
+	url = https://github.com/maji-git/swift-countdown.git
+[submodule "public/proj/swift-countdown"]
+	path = public/proj/swift-countdown
+	url = https://github.com/maji-git/swift-countdown.git

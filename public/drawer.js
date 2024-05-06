@@ -3,20 +3,16 @@ const canvas = document.getElementById('drawCanvas');
 // get #drawCanvas context
 const ctx = canvas.getContext('2d');
 
-const notePenActivate = document.querySelector("#notePenActivate")
-
 const penCursor = document.getElementById("penCursor")
 
 let drawActive = false
 
-notePenActivate.addEventListener("click", () => {
-    drawActive = true
-
-    init()
-})
-
 let mouseX = 0
 let mouseY = 0
+
+drawActive = true
+
+init()
 
 function init() {
     canvas.width = window.innerWidth;

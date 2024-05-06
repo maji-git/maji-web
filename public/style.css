@@ -79,6 +79,8 @@ body {
     width: 280px;
     transition: width 0.6s cubic-bezier(.24,.96,.52,1.02);
     overflow: hidden;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .links a:hover {

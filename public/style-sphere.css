@@ -1,0 +1,143 @@
+@import url(assets/fonts/stylesheet.css);
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    background-repeat: repeat;
+    background-size: 40px;
+    font-family: "Victor Mono", monospace;
+    user-select: none;
+    background-color: #111A16;
+    user-select: none;
+    overflow: hidden;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+.thing-icon {
+    width: 150px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.thing-icon .thing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: thingAppear 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: var(--anim-delay);
+}
+
+@keyframes thingAppear {
+    0% {
+        opacity: 0;
+        filter: brightness(12) drop-shadow(0px 0px 40px white);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1) drop-shadow(0px 0px 0px white);
+    }
+}
+
+.thing-icon {
+    text-decoration-line: none;
+    opacity: calc(var(--layer) / 50);
+}
+
+.thing-icon:hover .thing-container {
+    transform: scale(1.1);
+}
+
+.img-container {
+    background-color: #5D7B6F;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+
+    transition: background-color 0.2s ease-out;
+}
+
+.img-container img {
+    filter: contrast(0) brightness(3);
+}
+
+.thing-icon:hover .img-container {
+    background-color: #defaef;
+}
+
+
+.thing-icon:hover img {
+    filter: none;
+}
+
+
+.thing-icon .title {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.thing-icon .desc {
+    margin: 0;
+    margin-top: 0.5rem;
+    color: white;
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
+.debug-label {
+    opacity: 0.2;
+    font-size: 0.8em;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    opacity: 0.5;
+    cursor: none;
+    pointer-events: none;
+}
+
+.star-label {
+    animation: starAppear 0.3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: var(--delay);
+}
+
+@keyframes starAppear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: var(--opa);
+    }
+}

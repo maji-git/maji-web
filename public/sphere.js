@@ -168,7 +168,7 @@ document.addEventListener("mousemove", (e) => {
     const dX = (mousePast.x - e.clientX) / dragSense
     const dY = (mousePast.y - e.clientY) / dragSense
 
-    const v = new THREE.Vector3(0, dX, dY)
+    const v = new THREE.Vector3(dY, dX, 0)
     setRotation = v
 })
 

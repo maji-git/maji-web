@@ -1,107 +1,148 @@
-@import url(assets/fonts/stylesheet.css);
-@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
 body {
-    background-repeat: repeat;
-    background-size: 40px;
-    font-family: "Victor Mono", monospace;
-    font-size: 2em;
-    user-select: none;
-    background-color: #f1f1f1;
+    font-family: "Victor Mono", "Athiti", monospace;
+    background-color: #F4F4F4;
 }
 
-::-webkit-scrollbar {
-    width: 0px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: transparent;
-}
-
-.logo {
-    position: fixed;
-    bottom: 50px;
-    left: 50px;
-    z-index: 50;
-}
-
-::-moz-selection {
-    background: #B0D4B8;
-}
-
-::selection {
-    background: #B0D4B8;
-}
-
-
-#drawCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#penCursor {
-    pointer-events: none;
-    position: absolute;
-    transform-origin: top;
-    z-index: 10;
-    transition: transform 0.5s;
-}
-
-.links {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    font-size: 1rem;
+.main-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.links a {
-    border-radius: 6px;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.034) 0%, rgba(0, 0, 0, 0) 100%);
-    padding: 12px;
+.about-bubble {
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+    background-color: #FAFAFA;
+    margin-bottom: 16px;
+}
+
+.btn-link2 {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 8px;
+    width: 100%;
+    display: block;
     color: black;
     text-decoration: none;
+    text-align: left;
+    position: relative;
+}
+
+.btn-link2:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.btn-link2:hover::after {
+    background-position: 28px 0%;
+}
+
+.btn-link2.up:hover::after {
+    background-position: 24px -24px;
+}
+
+.btn-link2.merge-l:hover::after {
+    background-position: 0px -24px;
+}
+
+.btn-link2::after {
+    content: " ";
+    position: absolute;
+    right: 16px;
+    width: 28px;
+    height: 24px;
+    transition: background-position 0.2s;
+    background-repeat: repeat;
+    background-image: url(assets/icons/tabler-icon-arrow-narrow-right.svg);
+}
+
+.btn-link2.merge-l::after {
+    background-image: url(assets/icons/tabler-icon-arrow-merge-alt-left.png);
+}
+
+.btn-link2.up::after {
+    background-image: url(assets/icons/tabler-icon-arrow-up-right.png);
+}
+
+.l-side {
     display: flex;
-    justify-content: left;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socials a {
+    cursor: pointer;
+}
+
+.socials a img {
+    transition: transform 0.3s, width, 0.3s;
+    transform-origin: bottom;
+    opacity: 0.5;
+    width: 24px;
+}
+
+.socials a:hover img {
+    transition-duration: 20ms, 20ms;
+    opacity: 1;
+    transform: scale(1.2);
+    width: 30px;
+}
+
+.maji {
+    position: relative;
+    left: 10%;
+
+    animation: majiFloat 10s ease-in-out infinite;
+}
+
+@keyframes majiFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.text-sm {
+    font-size: 0.75em;
+}
+
+.m-hl {
+    color: #5D7B6F;
+}
+
+.ls-page.hidden {
+    display: none;
+}
+
+.lsp-tmenu {
+    font-weight: 300;
+    display: flex;
     align-items: center;
-    margin-top: 8px;
-    width: 280px;
-    transition: width 0.6s cubic-bezier(.24,.96,.52,1.02);
-    overflow: hidden;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
 }
 
-.links a:hover {
-    transition-timing-function: cubic-bezier(0,1.64,0,1.38);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-    width: 320px;
+.lsp-tmenu .back-btn {
+    margin-right: 1em;
+    border: none;
+    background-color: transparent;
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
 }
 
-.links a:active {
-    transition-timing-function: cubic-bezier(0,1.64,0,1.38);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-    width: 310px;
+.lsp-tmenu .back-btn:hover {
+    background-color: rgba(0, 0, 0, 0.04);
 }
 
-.links a .link-icon {
-    margin-right: 8px;
-    filter: brightness(0);
-    transition: filter 0.6s cubic-bezier(.24,.96,.52,1.02);
-}
-
-.links a:hover .link-icon {
-    filter: brightness(1) drop-shadow(0px 0px 2px #00000021);
-    transition-timing-function: cubic-bezier(0,1.64,0,1.38);
+.lsp-tmenu h1 {
+    font-weight: 300;
+    font-size: 1.6em;
+    letter-spacing: -0.1rem;
 }
